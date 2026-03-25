@@ -1,0 +1,10 @@
+export const searchInput = '//input[@id="gh-ac"]';
+export const searchButton = '//button[@id="gh-search-btn"]';
+export const sonyCheckbox = '//input[@aria-label="Sony"]';
+export const priceFilter = '//div[text()="Price"]';
+export const minPrice = '//input[@aria-label="Minimum Value in $"]';
+export const maxPrice = '//input[@aria-label="Maximum Value in $"]';
+export const items = '//li[@data-view="mi:1686|iid:3"]//div[@class="su-image"]';
+export const addToCartBtn = '//span[text()="Add to cart"]';
+export const searchResultsUrl = '**/sch/**';
+export const searchResultsContainer = '.srp-results';
