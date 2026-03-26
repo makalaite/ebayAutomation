@@ -22,9 +22,9 @@ export default defineConfig({
         },
       },
     },
-    {
+    ...(!process.env.CI ? [{
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'], headless: !!process.env.CI },
-    },
+      use: { ...devices['Desktop Firefox'], headless: false },
+    }] : []),
   ],
 });
