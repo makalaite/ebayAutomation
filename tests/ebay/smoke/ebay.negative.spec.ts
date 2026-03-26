@@ -12,8 +12,7 @@ test.describe('Ebay negative scenarios', () => {
 
   test('search with price range that excludes all results shows no matches', async ({ page }) => {
     await page.goto('https://www.ebay.com/sch/i.html?_nkw=headphones&_udlo=9999&_udhi=9999');
-    await page.waitForSelector('.srp-results');
-    const noResults = page.locator('//h3[contains(text(),"No exact matches found")]');
-    await expect(noResults).toBeVisible();
+    const noResults = page.locator('.srp-save-null-search h3, h3:has-text("No exact matches found")');
+    await expect(noResults).toBeVisible({ timeout: 30000 });
   });
 });

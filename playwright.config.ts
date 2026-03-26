@@ -13,7 +13,13 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'], headless: !!process.env.CI },
+      use: {
+        ...devices['Desktop Chrome'],
+        headless: !!process.env.CI,
+        launchOptions: {
+          args: ['--disable-dev-shm-usage', '--no-sandbox'],
+        },
+      },
     },
     {
       name: 'firefox',
