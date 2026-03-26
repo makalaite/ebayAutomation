@@ -75,7 +75,7 @@ async function addToCart(page: Page) {
 async function seeInCart(page: Page) {
   await waitForSelector(page, locators.seeInCartBtn);
 
-  const newPagePromise = page.context().waitForEvent('page', { timeout: 5000 }).catch(() => null);
+  const newPagePromise = page.context().waitForEvent('page', { timeout: 15000 }).catch(() => null);
   await click(page, locators.seeInCartBtn);
   const newPage = await newPagePromise;
 

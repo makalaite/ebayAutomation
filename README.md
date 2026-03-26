@@ -42,15 +42,15 @@ tests/ebay/
 
 ## Test Suites
 
-- **ebay.spec.ts** — Full happy-path flow: search → filter → select item → add to cart → checkout → fill shipping form → return to cart → remove item
-- **ebay.negative.spec.ts** — Negative scenarios: gibberish search, price range with no results
+- **ebay.spec.ts** - Full happy-path flow: search → filter → select item → add to cart → checkout → fill shipping form → return to cart → remove item
+- **ebay.negative.spec.ts** - Negative scenarios: gibberish search, price range with no results
 
 ## Notes & Assumptions
 
-- Tests run in **serial mode** — each test depends on the state of the previous one
+- Tests run in **serial mode** - each test depends on the state of the previous one
 - The third search result is selected by position (`data-view="mi:1686|iid:3"`); if eBay changes its markup this locator may need updating
 - If the product requires selecting an option (e.g. color/size), the test handles it automatically
 - The shipping form is filled with dummy data from `test-data/shipping.csv`
-- eBay's checkout sign-in modal loads inside an iframe — the guest checkout button is located within `iframe#auth-iframe`
+- eBay's checkout sign-in modal loads inside an iframe - the guest checkout button is located within `iframe#auth-iframe`
 - Tests run with `headless: false` locally; on CI (`npx playwright test`) they run headless by default via the GitHub Actions workflow
 - The CI pipeline is defined in `.github/workflows/playwright.yml` and uploads the HTML report as an artifact on every run
