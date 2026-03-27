@@ -8,7 +8,6 @@ export const thirdItem = '//li[@data-view="mi:1686|iid:3"]//div[@class="su-image
 export const selectOptionBtn = '//span[text()="Option:"]';
 export const optionItem = '//div[@role="option" and not(@aria-selected="true")]';
 export const addToCartBtn = '//span[text()="Add to cart"]';
-export const searchResultsUrl = '**/sch/**';
 export const searchResultsContainer = '.srp-results';
 export const seeInCartBtn = '//a[contains(@class,"fake-btn--primary")]//span[text()="See in cart"]';
 export const goToCheckoutBtn = '//button[text()="Go to checkout"]';

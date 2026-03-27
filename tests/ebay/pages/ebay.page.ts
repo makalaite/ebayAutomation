@@ -3,7 +3,7 @@ import { parse } from 'csv-parse/sync';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as locators from '../locators/ebay.locators';
-import { click, fill, waitForURL, waitForSelector, scrollIntoView, check, press, isVisible } from '../helpers/actions';
+import { click, fill, waitForSelector, scrollIntoView, check, press, isVisible } from '../helpers/actions';
 
 interface ShippingData {
   email: string;
@@ -29,10 +29,7 @@ async function searchForItem(page: Page) {
 }
 
 async function waitForSearchResults(page: Page) {
-  await Promise.race([
-    waitForURL(page, locators.searchResultsUrl),
-    waitForSelector(page, locators.searchResultsContainer)
-  ]);
+  await waitForSelector(page, locators.searchResultsContainer);
 }
 
 async function showSonyProducts(page: Page) {

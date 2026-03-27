@@ -20,10 +20,6 @@ export async function scrollIntoView(page: Page, selector: string) {
   await page.locator(selector).scrollIntoViewIfNeeded();
 }
 
-export async function waitForURL(page: Page, urlPattern: string, timeout: number = 45000) {
-  await page.waitForURL(urlPattern, { timeout });
-}
-
 export async function waitForSelector(page: Page, selector: string, timeout: number = 45000) {
   await page.waitForSelector(selector, { timeout });
 }
